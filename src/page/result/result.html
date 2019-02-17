@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%= require('html-loader!../../common/head-common/head-common.html') %>
+        <title><%= htmlWebpackPlugin.options.title %> - Fortune Inn</title>
+    </head>
+
+<body>
+    <%= require('html-loader!../../common/nav-simple/nav-simple.html') %>
+    <div class="page-wrap w">
+        <div class="result-con">
+            <h1 class="result-title"></h1>
+            <div class="result-content">
+                <a href="./index.html" class="link">回到首页</a>
+            </div>
+        </div>
+    </div>
+    <%= require('html-loader!../../common/footer/footer.html') %>
+</body>
+</html>

@@ -3,53 +3,47 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const getHtmlConfig = (name) => {
+const getHtmlConfig = (name, title) => {
     return {
-        template: `./src/view/${name}.html`,
+        template: `./src/page/${name}/${name}.html`,
         filename: `view/${name}.html`,
         inject: true,
         hash: true,
-        chunks: ['vendor', 'common', name]
+        chunks: ['common', name],
+        title: title
     }
 }
 
 const config = {
     mode: 'development',
     entry: {
-        'common': './src/page/common/index.js',
         'index': './src/page/index/index.js',
-        'login': './src/page/login/index.js'
+        'login': './src/page/login/index.js',
+        'result': './src/page/result/index.js',
     },
     output: {
         filename: 'js/[name].js',
         path: path.join(__dirname, '/dist'),
         publicPath: '/dist'
     },
+    resolve: {
+        alias: {
+            util: path.join(__dirname, '/src/util'),
+            page: path.join(__dirname, '/src/page'),
+            service: path.join(__dirname, '/src/service'),
+            image: path.join(__dirname, '/src/image'),
+            common: path.join(__dirname, '/src/common'),
+            node_modules: path.join(__dirname, '/node_modules'),
+        }
+    },
     externals: {
         jquery: 'jQuery'
     },
     optimization: {
         splitChunks: {
-            cacheGroups: {
-                vendor: {
-                    chunks: "all",
-                    test: /[\\/]node_modules[\\/]/,
-                    name: "vendor",
-                    minChunks: 1,
-                    maxInitialRequests: 5,
-                    minSize: 0,
-                    priority: 100,
-                },
-                common: {
-                    chunks: "all",
-                    test: /[\\/]src[\\/]/,
-                    name: "common",
-                    minChunks: 2,
-                    maxInitialRequests: 5,
-                    minSize: 0,
-                    priority: 1
-                }
-            }
+            chunks: 'all',
+            name: 'common',
+            minChunks: 2
         }
     },
     plugins: [
@@ -57,7 +51,8 @@ const config = {
         new MiniCssExtractPlugin({
             filename: "css/[name].css"
         }),
-        new HtmlWebpackPlugin(getHtmlConfig('index'))
+        new HtmlWebpackPlugin(getHtmlConfig('index', '首页')),
+        new HtmlWebpackPlugin(getHtmlConfig('result', '操作结果')),
     ],
     module: {
         rules: [
@@ -69,7 +64,7 @@ const config = {
                 ]
             },
             {
-                test: /\.(png|jpg|gif|woff|svg|eot|ttf)$/,
+                test: /\.(png|jpg|gif|woff|svg|eot|ttf|woff2)$/,
                 use: [
                     {
                         loader: 'url-loader',
@@ -84,7 +79,14 @@ const config = {
     },
     devServer: {
         port: 9000,
-        inline: true
+        inline: true,
+        proxy: {
+            '/': {
+                target: 'http://localhost:3000',
+                changeOrigin: true,
+                secure: false
+            }
+        }
     }
 }
 

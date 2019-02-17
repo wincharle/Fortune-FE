@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%= require('html-loader!../../common/head-common/head-common.html') %>
+        <title><%= htmlWebpackPlugin.options.title %> - Fortune Inn</title>
+    </head>
+
+<body>
+    <%= require('html-loader!../../common/nav/nav.html') %>
+    <%= require('html-loader!../../common/header/header.html') %>
+    <div class="page-wrap w">
+        <%= require('html-loader!../../common/nav-side/nav-side.html') %>
+        <div class="content with-side">test</div>
+    </div>
+    <%= require('html-loader!../../common/footer/footer.html') %>
+</body>
+</html>
