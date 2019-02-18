@@ -11,9 +11,9 @@
     color: #888;
 }
 .nav-side .nav-item.active .link {
-    color: #b83b5e;
+    color: #8e2800;
 }
-.content.with-nav {
+.content.with-side {
     float: left;
     width: 950px;
 }

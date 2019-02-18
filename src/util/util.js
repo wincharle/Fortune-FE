@@ -26,7 +26,7 @@ var _util = {
         });
     },
     doLogin: function () {
-        window.location.href = './login.html?redirect=' + encodeURIComponent(window.location.href);
+        window.location.href = './user-login.html?redirect=' + encodeURIComponent(window.location.href);
     },
     getServerUrl: function (path) {
         return conf.serverHost + path;

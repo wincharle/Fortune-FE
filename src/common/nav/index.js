@@ -15,7 +15,7 @@ var nav = {
             util.doLogin();
         });
         $('.js-register').click(function () {
-            window.location.href = './register.html';
+            window.location.href = './user-register.html';
         });
         $('.js-logout').click(function () {
             user.logout(function (res) {
