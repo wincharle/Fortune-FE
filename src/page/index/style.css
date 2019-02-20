@@ -1,0 +1,74 @@
+.keywords-list {
+    float: left;
+    width: 240px;
+    height: 350px;
+    padding: 10px 0;
+    margin-right: 10px;
+    background: #666;
+    color: #fff;
+}
+.keywords-list .keywords-item {
+    padding-left: 10px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 14px;
+}
+.keywords-list .keywords-item:hover {
+    background: #999;
+}
+.keywords-list .keywords-item .link {
+    margin-right: 6px;
+    color: #fff;
+}
+.keywords-list .keywords-item .link:hover {
+    color: #b83b5e;
+}
+
+.banner-con {
+    float: left;
+    width: 830px;
+    height: 370px;
+    background: #eee;
+}
+.banner-con .loading {
+    margin-top: 150px;
+}
+
+.floor-wrap .floor-title {
+    height: 50px;
+    line-height: 50px;
+    color: #ffb03b;
+    font-size: 20px;
+    border-bottom: 1px solid #ffb03b;
+}
+.floor-wrap .floor-list {
+    margin-right: -20px;
+    overflow: hidden;
+}
+.floor-wrap .floor-item {
+    position: relative;
+    width: 200px;
+    height: 220px;
+    margin: 15px 20px 15px 0;
+    float: left;
+    cursor: pointer;
+    background: #fff;
+}
+.floor-wrap .floor-item:hover {
+    box-shadow: 1px 1px 7px #ddd;
+}
+.floor-wrap .floor-item .floor-text {
+    position: absolute;
+    top: 12px;
+    left: 20px;
+    font-size: 16px;
+    color: #555;
+}
+.floor-wrap .floor-item .floor-img {
+    position: absolute;
+    right: 15px;
+    bottom: 10px;
+    width: 80%;
+    height: 75%;
+    border: none;
+}

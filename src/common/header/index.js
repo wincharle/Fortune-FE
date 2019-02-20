@@ -4,6 +4,7 @@ var util = require('util/util');
 var header = {
     init: function () {
         this.bindEvent();
+        this.onLoad();
         return this;
     },
     bindEvent: function () {

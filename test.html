@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 400px;
+            height: 400px;
+            border: 1px solid red;
+        }
+        p {
+            width: 100px;
+            height: 100px;
+            background: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p><button>点我</button></p>
+    </div>
+
+    <script>
+        var div = document.querySelector('div'),
+            p = document.querySelector('p'),
+            btn = document.querySelector('button');
+        
+        document.addEventListener('click', function(e) {
+            if(e.target.nodeName.toLowerCase() === 'p') {
+                console.log('p')
+            }
+            if(e.target.nodeName === 'button') {
+                console.log('button')
+            }
+            if(e.target.nodeName === 'div') {
+                console.log('div')
+            }
+        });
+    </script>
+</body>
+</html>

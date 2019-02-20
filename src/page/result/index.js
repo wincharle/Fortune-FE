@@ -9,7 +9,9 @@ $(function () {
         $('.result-title').text('恭喜您，操作成功');
     } else if (type === 'register') {
         $('.result-title').text('恭喜您，注册成功');
-    }else if (type === 'pass-reset') {
+    } else if (type === 'pass-reset') {
         $('.result-title').text('恭喜您，修改密码成功');
+    } else if (type === 'cart-add') {
+        $('.result-title').text('恭喜您，加入购物车成功');
     }
 });
