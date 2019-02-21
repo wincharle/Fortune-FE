@@ -38,7 +38,7 @@ var detailTpl = `
         <span class="p-count-btn minus">-</span>
     </div>
     <div class="p-info-item">
-        <a href="" class="btn cart-add">加入购物车</a>
+        <a class="btn cart-add">加入购物车</a>
     </div>
 </div>
 </div>

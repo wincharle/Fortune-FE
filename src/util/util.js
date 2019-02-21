@@ -22,7 +22,7 @@ var _util = {
             },
             error: function (err) {
                 typeof param.error === 'function' && param.error(err.statusText);
-            }
+            },
         });
     },
     doLogin: function () {
